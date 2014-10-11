@@ -1,7 +1,7 @@
 <idea-plugin version="2">
     <id>com.michael.bergens.java.playground</id>
     <name>Copy current file&apos;s file path or dir path with Unix file separators</name>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <vendor email="michael bergens (AT) GMail" url="https://github.com/mub/brainYard/tree/master/jetBrains/idea/plugins/copyNixPath">Michael Bergens</vendor>
 
     <description><![CDATA[
@@ -26,6 +26,7 @@
 
     <change-notes><![CDATA[
     <ul>
+      <li><tt>1.0.3</tt> - <i>Sat 2014-Oct-11</i>; <a href="https://github.com/mub/brainYard/issues/1">Issue #1</a>: Eliminated one class, simplified code.
       <li><tt>1.0.2</tt> - recompiled for JDK 7 for folks who are still on 7</li>
       <li><tt>1.0.1</tt> - added directory path copy action</li>
       <li><tt>1.0.0</tt> - initial release, built for JDK 8</li>
@@ -55,7 +56,7 @@
     </project-components>
 
     <actions>
-        <action class="org.momuniverse42.idea.copyNixPath.CopyNixPath"
+        <action class="org.momuniverse42.idea.copyNixPath.CopyNixFilePath"
                 id="org.momuniverse42.idea.copyNixPath.CopyNixPath"
                 text="Copy path with Unix file seps"
                 description="Copy current file&apos;s path with Unix file separators if your IDE runs in Windows but terminal is Unix">
@@ -65,8 +66,8 @@
             <add-to-group group-id="ConsoleEditorPopupMenu"/>
         </action>
 
-        <action class="org.momuniverse42.idea.copyNixPath.CopyNixDir"
-                id="org.momuniverse42.idea.copyNixPath.CopyNixDir"
+        <action class="org.momuniverse42.idea.copyNixPath.CopyNixDirPath"
+                id="org.momuniverse42.idea.copyNixPath.CopyNixDirPath"
                 text="Copy directory path with Unix file seps"
                 description="Copy current file&apos;s directory path with Unix file separators if your IDE runs in Windows but terminal is Unix">
             <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="CutCopyPasteGroup"/>

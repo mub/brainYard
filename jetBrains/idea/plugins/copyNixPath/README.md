@@ -16,4 +16,5 @@ This code is &#9728; public domain. &#9729; Free as dust in the wind. &#x263c;
 
 No obligation nor responsibilities from my side, no expectations from yours.
 
-Use at your own discretion. Feel free to add an issue to this GitHub project if any, I may get to it if ever.
+Use at your own discretion. Feel free to add an [&rarr;issue&larr;](https://github.com/mub/brainYard/issues)
+to this GitHub project if any, I may get to it some day if ever.
