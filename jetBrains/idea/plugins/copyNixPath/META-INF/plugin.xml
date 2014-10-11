@@ -1,7 +1,7 @@
 <idea-plugin version="2">
     <id>com.michael.bergens.java.playground</id>
     <name>Copy current file&apos;s file path or dir path with Unix file separators</name>
-    <version>1.0</version>
+    <version>1.0.1</version>
     <vendor email="michael bergens (AT) GMail" url="https://github.com/mub/brainYard/tree/master/jetBrains/idea/plugins/copyNixPath">Michael Bergens</vendor>
 
     <description><![CDATA[
@@ -12,11 +12,15 @@
       <p><u>Rationale:</u><br/>
       If your IDE runs in Windows, then standard Idea "Copy Path" feature will copy you <b>backslashed</b> Windows path,
       but if you run a Unix terminal into your Windows paths (<i>like Cygwin or a virt with shared folders</i>),
-      then it is very hard to use the <b>backslashed</b> Windows path with Unix shell scripts, that's when this plugin can help.
+      then it is very hard to use the <b>backslashed</b> Windows path with <b>Unix shell scripts</b>, that's when this plugin can help.
       <p>
       And if you have <a href="http://en.wikipedia.org/wiki/Windows_Services_for_UNIX">Windows Services for Unix</a>
       installed, you'll be able to use the paths provided by this plugin in Windows as well, in Explorer and the <tt>CMD.EXE</tt>
-      shell and the Powershell.
+      shell and the PowerShell.
+      </p>
+      <p>
+      This plugin adds 2 menu items to the editor popup menu, but I also remapped the standard Idea's
+      "<u>E</u>dit &rarr; C<u>o</u>py Path" action's <b>keyboard shortcuts</b> to my plugin's too.
       </p>
     ]]></description>
 
