@@ -79,7 +79,7 @@
       <file leaf-file-name="plugin.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="457" max-vertical-offset="2285">
+            <state vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="1215">
               <caret line="41" column="44" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
               <folding />
             </state>
@@ -92,8 +92,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22079116" vertical-offset="0" max-vertical-offset="1372">
-              <caret line="16" column="55" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.13799448" vertical-offset="0" max-vertical-offset="1372">
+              <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -102,7 +102,7 @@
       <file leaf-file-name="CopyNixFilePath.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/momuniverse42/idea/copyNixPath/CopyNixFilePath.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="2225">
+            <state vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="1155">
               <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -294,8 +294,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -307,7 +307,7 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="options.lastSelected" value="preferences.keymap" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/org/momuniverse42/idea/copyNixPath" />
@@ -767,11 +767,12 @@
       <workItem from="1413022480496" duration="1606000" />
       <workItem from="1413056745132" duration="1527000" />
       <workItem from="1413058494773" duration="315000" />
+      <workItem from="1413059817635" duration="68000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13324000" />
+    <option name="totallyTimeSpent" value="13392000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="1208" extended-state="6" />
@@ -1083,8 +1084,8 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22079116" vertical-offset="0" max-vertical-offset="1372">
-          <caret line="16" column="55" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.13799448" vertical-offset="0" max-vertical-offset="1372">
+          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
           <folding />
         </state>
       </provider>

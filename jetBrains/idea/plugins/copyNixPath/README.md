@@ -8,7 +8,7 @@ my Unix shell scripts. I quickly cobbled this tiny plugin together and it's savi
 
 What it does, it adds 2 actions and 2 menu items to the editor popup menus.
 
-This plugin is posted to the [JetBrain's plugin repository &rarr;here](https://plugins.jetbrains.com/plugin/7584?pr)
+This plugin is posted to the [JetBrains plugin repository &rarr;here](https://plugins.jetbrains.com/plugin/7584?pr)
 
 # &larr;&lArr; Copyleft
 
