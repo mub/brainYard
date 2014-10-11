@@ -1,7 +1,7 @@
 <idea-plugin version="2">
     <id>com.michael.bergens.java.playground</id>
     <name>Copy current file&apos;s file path or dir path with Unix file separators</name>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <vendor email="michael bergens (AT) GMail" url="https://github.com/mub/brainYard/tree/master/jetBrains/idea/plugins/copyNixPath">Michael Bergens</vendor>
 
     <description><![CDATA[
@@ -25,7 +25,11 @@
     ]]></description>
 
     <change-notes><![CDATA[
-      Initial (<em>and quite likely, last</em>) release.
+    <ul>
+      <li><tt>1.0.2</tt> - recompiled for JDK 7 for folks who are still on 7</li>
+      <li><tt>1.0.1</tt> - added directory path copy action</li>
+      <li><tt>1.0.0</tt> - initial release, built for JDK 8</li>
+     </ul>
     ]]>
     </change-notes>
 
