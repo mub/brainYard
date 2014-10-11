@@ -1,0 +1,53 @@
+<idea-plugin version="2">
+    <id>com.michael.bergens.java.playground</id>
+    <name>Copy current file path with Unix file separators</name>
+    <version>1.0</version>
+    <vendor email="michael.bergens@gmail.com" url="https://www.linkedin.com/profile/view?id=4352367&amp;trk=nav_responsive_tab_profile">Michael Bergens</vendor>
+
+    <description><![CDATA[
+      Very simple plugin that copies current file's path with always <b>Unix</b> and never <strike>Windows</strike> path separators regardless.
+      If your IDE runs in Windows, then standard Idea "Copy Path" feature will copy you Windows path,
+      but if you run a Unix terminal into your Windows paths (<i>like Cygwin or a virt with shared folders</i>),
+      then it is very hard to use the Windows path with Unix shell scripts, that's when this plugin can help.
+    ]]></description>
+
+    <change-notes><![CDATA[
+      Initial (<em>and quite likely, last</em>) release.
+    ]]>
+    </change-notes>
+
+    <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+    <idea-version since-build="131"/>
+
+    <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <application-components>
+        <!-- Add your application components here -->
+    </application-components>
+
+    <project-components>
+        <!-- Add your project components here -->
+    </project-components>
+
+    <actions>
+        <action class="org.momuniverse42.idea.copyNixPath.CopyNixPath"
+                id="org.momuniverse42.idea.copyNixPath.CopyNixPath"
+                text="Copy path with Unix file seps"
+                description="Copy current file&apos;s path with Unix file separators if your IDE runs in Windows but terminal is Unix">
+            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="CutCopyPasteGroup"/>
+            <add-to-group group-id="ProjectViewPopupMenu"/>
+            <add-to-group group-id="EditorTabPopupMenu"/>
+            <add-to-group group-id="ConsoleEditorPopupMenu"/>
+        </action>
+
+    </actions>
+
+</idea-plugin>
