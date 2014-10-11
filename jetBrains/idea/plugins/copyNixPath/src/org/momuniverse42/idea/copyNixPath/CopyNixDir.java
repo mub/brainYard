@@ -2,16 +2,19 @@ package org.momuniverse42.idea.copyNixPath;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.io.File;
+
 /**
- * Copy the full path implementor.
  * @author mubergens Michael Bergens
  */
-public class CopyNixPath extends CopyNixAction {
+public class CopyNixDir extends CopyNixAction {
 
     /**
-     * Pass-through, no changes made.
+     * Snips off the filename, returns the file's directory only.
      */
     @Override @NotNull public String adjust(final @NotNull String path) {
-        return path;
+        final File f = new File(path);
+
+        return f.isDirectory() ? path : f.getParent();
     }
 }

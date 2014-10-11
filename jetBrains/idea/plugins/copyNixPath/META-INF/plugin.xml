@@ -1,14 +1,23 @@
 <idea-plugin version="2">
     <id>com.michael.bergens.java.playground</id>
-    <name>Copy current file path with Unix file separators</name>
+    <name>Copy current file&apos;s file path or dir path with Unix file separators</name>
     <version>1.0</version>
-    <vendor email="michael.bergens@gmail.com" url="https://www.linkedin.com/profile/view?id=4352367&amp;trk=nav_responsive_tab_profile">Michael Bergens</vendor>
+    <vendor email="michael bergens (AT) GMail" url="https://github.com/mub/brainYard/tree/master/jetBrains/idea/plugins/copyNixPath">Michael Bergens</vendor>
 
     <description><![CDATA[
-      Very simple plugin that copies current file's path with always <b>Unix</b> and never <strike>Windows</strike> path separators regardless.
-      If your IDE runs in Windows, then standard Idea "Copy Path" feature will copy you Windows path,
+    <p>
+      Very simple plugin that copies current file's path or its dir path to the &rarr;clipboard
+      with always <b>Unix</b> and never <strike>Windows</strike> path separators regardless.
+      </p>
+      <p><u>Rationale:</u><br/>
+      If your IDE runs in Windows, then standard Idea "Copy Path" feature will copy you <b>backslashed</b> Windows path,
       but if you run a Unix terminal into your Windows paths (<i>like Cygwin or a virt with shared folders</i>),
-      then it is very hard to use the Windows path with Unix shell scripts, that's when this plugin can help.
+      then it is very hard to use the <b>backslashed</b> Windows path with Unix shell scripts, that's when this plugin can help.
+      <p>
+      And if you have <a href="http://en.wikipedia.org/wiki/Windows_Services_for_UNIX">Windows Services for Unix</a>
+      installed, you'll be able to use the paths provided by this plugin in Windows as well, in Explorer and the <tt>CMD.EXE</tt>
+      shell and the Powershell.
+      </p>
     ]]></description>
 
     <change-notes><![CDATA[
@@ -48,6 +57,15 @@
             <add-to-group group-id="ConsoleEditorPopupMenu"/>
         </action>
 
+        <action class="org.momuniverse42.idea.copyNixPath.CopyNixDir"
+                id="org.momuniverse42.idea.copyNixPath.CopyNixDir"
+                text="Copy directory path with Unix file seps"
+                description="Copy current file&apos;s directory path with Unix file separators if your IDE runs in Windows but terminal is Unix">
+            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="CutCopyPasteGroup"/>
+            <add-to-group group-id="ProjectViewPopupMenu"/>
+            <add-to-group group-id="EditorTabPopupMenu"/>
+            <add-to-group group-id="ConsoleEditorPopupMenu"/>
+        </action>
     </actions>
 
 </idea-plugin>
