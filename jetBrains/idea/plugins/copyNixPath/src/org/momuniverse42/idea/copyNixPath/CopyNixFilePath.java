@@ -2,7 +2,9 @@ package org.momuniverse42.idea.copyNixPath;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.ide.CopyPasteManager;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.ui.popup.Balloon;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
@@ -38,6 +40,8 @@ public class CopyNixFilePath extends AnAction {
      * Idea API hook.
      */
     public void actionPerformed(@NotNull final AnActionEvent event) {
+        final Project project = (Project)event.getData(CommonDataKeys.PROJECT);
+
         final VirtualFile file = event.getData(VIRTUAL_FILE);
         if (file == null) {
             showPopup(event, "<p><b>No active file</b></p>");
@@ -51,8 +55,12 @@ public class CopyNixFilePath extends AnAction {
         }
 
         CopyPasteManager.getInstance().setContents(new StringSelection(
-            BACKSLASH.matcher(adjust(file.getCanonicalPath())).replaceAll("/")
+            transform(SettingsComponent.getInstance(project).getState(), file.getCanonicalPath())
         ));
+    }
+
+    public String transform(final Settings settings, final String source) {
+        return settings.transform(BACKSLASH.matcher(adjust(source)).replaceAll("/"));
     }
 
     /**

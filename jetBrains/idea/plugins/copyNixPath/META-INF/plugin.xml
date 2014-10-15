@@ -1,7 +1,7 @@
 <idea-plugin version="2">
     <id>com.michael.bergens.java.playground</id>
     <name>Copy current file&apos;s file path or dir path with Unix file separators</name>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <vendor email="michael bergens (AT) GMail" url="https://github.com/mub/brainYard/tree/master/jetBrains/idea/plugins/copyNixPath">Michael Bergens</vendor>
 
     <description><![CDATA[
@@ -22,10 +22,18 @@
       This plugin adds 2 menu items to the editor popup menu, but I also remapped the standard Idea's
       "<u>E</u>dit &rarr; C<u>o</u>py Path" action's <b>keyboard shortcuts</b> to my plugin's too.
       </p>
+      <p>
+      Starting @version 1.0.4, also adds settings to transform paths by a regex for a project. For example, substituting this:
+      <font color="navy"><tt>^[A-Z]:/dir/(.+)$</tt></font> with this: <font color="navy"><tt>/mount/wf_dir/$1</tt></font>
+      will turn this Windows path:
+      <font color="navy"><tt>C:\dir\meh\blah\file.ext</tt></font> into this on the clipboard:
+      <font color="navy"><tt>/mount/wf_dir/meh/blah/file.ext</tt></font>
+      </p>
     ]]></description>
 
     <change-notes><![CDATA[
     <ul>
+      <li><tt>1.0.4</tt> - <i>Sat 2014-Oct-18</i>; provided optional path substitution
       <li><tt>1.0.3</tt> - <i>Sat 2014-Oct-11</i>; <a href="https://github.com/mub/brainYard/issues/1">Issue #1</a>: Eliminated one class, simplified code.
       <li><tt>1.0.2</tt> - recompiled for JDK 7 for folks who are still on 7</li>
       <li><tt>1.0.1</tt> - added directory path copy action</li>
@@ -53,6 +61,9 @@
 
     <project-components>
         <!-- Add your project components here -->
+        <component>
+            <implementation-class>org.momuniverse42.idea.copyNixPath.SettingsComponent</implementation-class>
+        </component>
     </project-components>
 
     <actions>
