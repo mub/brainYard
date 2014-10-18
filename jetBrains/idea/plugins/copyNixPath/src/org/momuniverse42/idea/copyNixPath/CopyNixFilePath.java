@@ -20,7 +20,6 @@ import java.util.regex.Pattern;
 import static com.intellij.openapi.actionSystem.CommonDataKeys.PROJECT;
 import static com.intellij.openapi.actionSystem.CommonDataKeys.VIRTUAL_FILE;
 
-
 //import com.intellij.openapi.diagnostic.Logger;
 
 /**
@@ -40,7 +39,7 @@ public class CopyNixFilePath extends AnAction {
      * Idea API hook.
      */
     public void actionPerformed(@NotNull final AnActionEvent event) {
-        final Project project = (Project)event.getData(CommonDataKeys.PROJECT);
+        final Project project = event.getData(CommonDataKeys.PROJECT);
 
         final VirtualFile file = event.getData(VIRTUAL_FILE);
         if (file == null) {
@@ -59,6 +58,13 @@ public class CopyNixFilePath extends AnAction {
         ));
     }
 
+    /**
+     * Performs full transformation per the given settings, from the backslashed source into the final form
+     * according to the regex if any.
+     * @see Settings#getReplaceBy()
+     * @see Settings#getSearch()
+     * @see Settings#getReplaceBy()
+     */
     public String transform(final Settings settings, final String source) {
         return settings.transform(BACKSLASH.matcher(adjust(source)).replaceAll("/"));
     }

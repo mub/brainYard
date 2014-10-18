@@ -20,7 +20,6 @@ import javax.swing.*;
 @State(name = SettingsComponent.COMPONENT_NAME, storages = {@Storage(id = "other", file = "$PROJECT_FILE$")})
 public class SettingsComponent  implements ProjectComponent, Configurable, PersistentStateComponent<Settings> {
     public static final String COMPONENT_NAME = "Michael.U.Bergens.CopyNixDirPlugin";
-    public static final String GRP_DISPLAY_ID_OK = "Copy *nix Paths plugin";
     public static final String GRP_DISPLAY_ID_ERR = "Copy *nix Paths plugin ERROR";
     public static final String CONFIGURATION_LOCATION;
     static {
@@ -94,7 +93,7 @@ public class SettingsComponent  implements ProjectComponent, Configurable, Persi
                 form.exportTo(settings);
             }
             catch (Exception x) {
-                notifier.showDialogError("You come back and adjust this, you got an error here:\n" + x.getMessage());
+                notifier.showDialogError("You better come back and adjust this, you got an error here:\n\n" + x.getMessage());
             }
         }
 
@@ -106,7 +105,7 @@ public class SettingsComponent  implements ProjectComponent, Configurable, Persi
                 form.importFrom(settings);
             }
             catch(Exception x) {
-                notifier.showDialogError("Error importing settings:\n" + x.getMessage());
+                notifier.showDialogError("Error importing settings:\n\n" + x.getMessage());
             }
         }
     }

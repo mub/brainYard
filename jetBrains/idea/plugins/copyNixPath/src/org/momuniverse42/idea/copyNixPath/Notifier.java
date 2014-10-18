@@ -1,23 +1,11 @@
 package org.momuniverse42.idea.copyNixPath;
 
-import com.intellij.notification.Notification;
-import com.intellij.notification.Notifications;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.MessageType;
-import com.intellij.openapi.ui.popup.Balloon;
-import com.intellij.openapi.ui.popup.JBPopupFactory;
-import com.intellij.openapi.wm.StatusBar;
-import com.intellij.openapi.wm.WindowManager;
-import com.intellij.ui.awt.RelativePoint;
 import org.jetbrains.annotations.NotNull;
 
-import static com.intellij.notification.NotificationType.ERROR;
 import static com.intellij.openapi.ui.Messages.getErrorIcon;
-import static com.intellij.openapi.ui.Messages.getInformationIcon;
 import static com.intellij.openapi.ui.Messages.showMessageDialog;
 import static org.momuniverse42.idea.copyNixPath.SettingsComponent.GRP_DISPLAY_ID_ERR;
-import static org.momuniverse42.idea.copyNixPath.SettingsComponent.GRP_DISPLAY_ID_OK;
 
 /**
  * @author mubergens Michael Bergens

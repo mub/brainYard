@@ -5,12 +5,14 @@ import org.jetbrains.annotations.NotNull;
 import java.io.File;
 
 /**
+ * Action handler: copy directory path.
  * @author mubergens Michael Bergens
  */
 public class CopyNixDirPath extends CopyNixFilePath {
 
     /**
      * Snips off the filename, returns the file's directory only.
+     * If it is a directory, leaves it as is.
      */
     @Override @NotNull public String adjust(final @NotNull String path) {
         final File f = new File(path);
