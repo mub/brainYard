@@ -35,7 +35,7 @@
 
     <change-notes><![CDATA[
     <ul>
-      <li><tt>1.0.5</tt> - <i>Sat 2014-Oct-18</i>; small UX fixes, typos, cosmetics etc. No functional changes.</li>n
+      <li><tt>1.0.5</tt> - <i>Sat 2014-Oct-18</i>; small UX fixes, typos, cosmetics etc. No functional changes.</li>
       <li><tt>1.0.4</tt> - <i>Sat 2014-Oct-18</i>; provided optional path substitution</li>
       <li><tt>1.0.3</tt> - <i>Sat 2014-Oct-11</i>; <a href="https://github.com/mub/brainYard/issues/1">Issue #1</a>: Eliminated one class, simplified code.</li>
       <li><tt>1.0.2</tt> - recompiled for JDK 7 for folks who are still on 7</li>

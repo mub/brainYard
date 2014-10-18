@@ -12,7 +12,7 @@ public class CopyNixDirPath extends CopyNixFilePath {
 
     /**
      * Snips off the filename, returns the file's directory only.
-     * If it is a directory, leaves it as is.
+     * If it is a directory, passes it straight through.
      */
     @Override @NotNull public String adjust(final @NotNull String path) {
         final File f = new File(path);
