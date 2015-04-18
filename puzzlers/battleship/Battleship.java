@@ -10,7 +10,9 @@ import java.util.regex.Pattern;
 import static java.util.Arrays.fill;
 
 /**
- * Hard-coding 2-dim board. Todo: add network play
+ * Sample of full working battleship game with all the parts crammed into one envelope class, includes console-based UI.
+ * <p>
+ * Hard-coding 2-dim board. Todo: add network play</p>
  *
  * @author mbergens Michael Bergens
  */
@@ -136,7 +138,7 @@ public class Battleship {
             this.orientation = orientation;
             this.segmentHealth = new char[size];
             fill(segmentHealth, HEALTHY_SEGMENT);
-            toStr = "Ship{" + name + '/' + size + ':' + left + ',' + top + '-' + orientation.name().charAt(0);
+            toStr = "Ship{" + name + '/' + size + ':' + left + ',' + top + '-' + orientation.name().charAt(0) + '}';
         }
 
         public char getName() {
