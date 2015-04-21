@@ -1,11 +1,12 @@
-# Requirements:
+
+## Requirements:
 
 
-## Original wording
+### Original wording
 
 Write a java application that accepts a URL (`www.yahoo.com`, for example). Crawl the page the URL references. Determine all the words that aren't part of the HTML on the page and the frequency counts for each. The results should be stored in a database. 
 
-## Clarifications 1
+### Clarifications 1
 
 Write a Java application as follows:
 
@@ -35,19 +36,19 @@ Configuration should be made available to the runnable via a `YAML` - formatted 
 * Odometer setting: flushing frequency (TBD)
   
 
-# Implementation notes.
+## Implementation notes.
 
-## The Database choice
+### The Database choice
 
 * <b>Plaintext file</b> -- won't work: need to update frequencies in a multi-tasking environment with odometer..
 * a simple <b>embeddable RDBMS</b> such as Apache Derby or H2 - seems like a logical choice.
 
-## Persistence layer
+### Persistence layer
 
 Make it very thin with minimal abstraction. A method of registering a new word encounter like 
 </br>`public void encountered(final String word, final int count) {....}`<br/> -- should suffice. Any implementation could be plugged into it as needed.
 
-## Caching and flushing
+### Caching and flushing
 
 The "words encountered" event should be made thread-safe with the parallel crawlers on the Java side. An alternative would be reliance on a RDBMS "Isolation level" but that's a slippery slope. It would place the issue where it does not logically belong and make concrete persistence layer update/replacement more difficult.
 
