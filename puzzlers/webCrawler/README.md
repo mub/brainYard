@@ -51,5 +51,8 @@ Make it very thin with minimal abstraction. A method of registering a new word e
 
 ### Caching and flushing
 
-The "words encountered" event should be made thread-safe with the parallel crawlers on the Java side. An alternative would be reliance on a RDBMS "Isolation level" but that's a slippery slope. It would place the issue where it does not logically belong and make concrete persistence layer update/replacement more difficult.
+The "words encountered" event should be made thread-safe with the parallel crawlers on the application side, not on the concrete persistence/database product side. An alternative would be reliance on a RDBMS "Isolation level" but that's a slippery slope in this case. It would place the issue where it does not logically belong and make concrete persistence layer update/replacement more difficult.
 
+### Source text connectivity layer
+
+* Candidate: [JSoup](http://jsoup.org/)
