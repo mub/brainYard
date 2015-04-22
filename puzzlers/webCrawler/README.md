@@ -8,8 +8,8 @@ Write a Java application as follows:
     * The following protocol(s) should be supported:
          * `HTTP`
 
-* <b>Output</b> - word frequencies stored in the database, in an entity with the 2 fields, indexed and PK'ed by `[ site, word ]`:
-    * `site`: `VARCHAR(255)` - a "site" is defined as "host:port" part of the URL. To reduce ambiguity, the "port" has to be always saved, even the port 80.
+* <b>Output</b> - word frequencies stored in the database, in an entity with the 2 fields, indexed and PK'ed by `[ site, word ]`, where `site` is defined as "host:port" part of the URL. To reduce ambiguity, the "port" has to be always saved, even the port 80:
+    * `site`: `VARCHAR(255)` 
     * `word`: `VARCHAR(48)`
     * `frequency`: `INTEGER`.
 
