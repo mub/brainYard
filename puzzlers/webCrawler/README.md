@@ -5,7 +5,7 @@
 
 ### Original wording
 
-Write a java application that accepts a URL (`www.yahoo.com`, for example). Crawl the page the URL references. Determine all the words that aren't part of the HTML on the page and the frequency counts for each. The results should be stored in a database. 
+Write a java application that accepts a URL (`www.yahoo.com`, for example). Crawl the page the URL references. Determine all the words that aren't part of the HTML on the page and the frequency counts for each, with the "site" dimension preserved, see the <b>Output</b> section. The results should be stored in a database. 
 
 ### Clarifications 1
 
@@ -16,6 +16,7 @@ Write a Java application as follows:
          * `HTTP`
 
 * <b>Output</b> - word frequencies stored in the database, in an entity with the 2 fields, indexed and PK'ed by `word`:
+    * `site`: `VARCHAR(255)` - a "site" is defined as "host:port" part of the URL.
     * `word`: `VARCHAR(48)`
     * `frequency`: `INTEGER`.
 
@@ -55,4 +56,4 @@ The "words encountered" event should be made thread-safe with the parallel crawl
 
 ### Source text connectivity layer
 
-* Candidate: [JSoup](http://jsoup.org/)
+* Candidate: [JSoup](http://jsoup.org/), notice the [healthy project history](http://mvnrepository.com/artifact/org.jsoup/jsoup) unlike some virtually abandoned competitors
