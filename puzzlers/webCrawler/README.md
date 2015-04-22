@@ -1,13 +1,6 @@
-# The Webcrawler challenge project
+# The WC challenge project
 
 ## Requirements:
-
-
-### Original wording
-
-Write a java application that accepts a URL (`www.yahoo.com`, for example). Crawl the page the URL references. Determine all the words that aren't part of the HTML on the page and the frequency counts for each, with the "site" dimension preserved, see the <b>Output</b> section. The results should be stored in a database. 
-
-### Clarifications 1
 
 Write a Java application as follows:
 
@@ -15,8 +8,8 @@ Write a Java application as follows:
     * The following protocol(s) should be supported:
          * `HTTP`
 
-* <b>Output</b> - word frequencies stored in the database, in an entity with the 2 fields, indexed and PK'ed by `word`:
-    * `site`: `VARCHAR(255)` - a "site" is defined as "host:port" part of the URL.
+* <b>Output</b> - word frequencies stored in the database, in an entity with the 2 fields, indexed and PK'ed by `[ site, word ]`:
+    * `site`: `VARCHAR(255)` - a "site" is defined as "host:port" part of the URL. To reduce ambiguity, the "port" has to be always saved, even the port 80.
     * `word`: `VARCHAR(48)`
     * `frequency`: `INTEGER`.
 
@@ -32,7 +25,7 @@ Write a Java application as follows:
 Configuration should be made available to the runnable via a `YAML` - formatted plaintext file.
 
 * Maximum URL depth: do not scan the whole Web. 
-* "Word specification" :: A RegEx of the word definition, what exactly constitutes a word. Example: `\w{3,}`
+* "Word specification" :: A RegEx of the word definition, what exactly constitutes a word. Example: `\w{1,}`
 * A List of RegEx of the URLs to be ignored. Example: `^https:\/\/.+$`
 * A list of ignored words such as "the", "off", "out" etc.
 * Odometer setting: flushing frequency (TBD)
@@ -43,7 +36,9 @@ Configuration should be made available to the runnable via a `YAML` - formatted 
 ### The Database choice
 
 * <b>Plaintext file</b> -- won't work: need to update frequencies in a multi-tasking environment with odometer..
-* a simple <b>embeddable RDBMS</b> such as Apache Derby or H2 - seems like a logical choice.
+* a simple <b>embeddable RDBMS</b> such as Apache Derby or H2 - seems like a logical choice for the project of this scale:
+    * it provides random access to structured data
+    * and facilitates its usage via SQL queries across any dimension needed
 
 ### Persistence layer
 
