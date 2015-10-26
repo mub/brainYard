@@ -21,6 +21,7 @@ unsigned int countByCondensing(unsigned int src) {
     result = ((result >> POW_OF_2[4]) + result) & COUNT_MASKS[4];
     return result;
 }
+
 unsigned int reverse_bits(unsigned int input) {
     // complixity O(log [no.of.bits]) = O(1)
     // On 32 bit machines it takes 5 steps (logical)
@@ -41,7 +42,9 @@ int main(int argc, char * argv[]) {
     cerr << "Must specify input value(s)" << endl;
     return 1;
   }
+
   unsigned int vals[ argc - 1 ];
+
   for(int ix = 1; ix < argc; ix++) {
     stringstream source;
     source << hex << argv[ix];
@@ -52,7 +55,9 @@ int main(int argc, char * argv[]) {
     printf("%08X -> %08X\n", arg, reverse_bits(arg));
   }
   argc--;
+
   cout << "** Bit Counts: " << endl;
+
   for(int ix = 0; ix < argc; ix++) {
     printf("%08X: Brian: %d, Condense: %d\n", vals[ix], countByKernighanBrian(vals[ix]), countByCondensing(vals[ix]));
   }
