@@ -30,7 +30,7 @@ public class Settings implements Cloneable {
 
     public void setSearch(String search) {
         this.search = search;
-        replaceBy = Pattern.compile(search);
+        replaceBy = search != null ? Pattern.compile(search) : null;
     }
 
     public void setReplaceWith(String replaceWith) {
