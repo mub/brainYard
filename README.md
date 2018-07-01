@@ -1,4 +1,4 @@
 brainYard
 =========
 
-CS fundamentals, puzzlers, brain teasers
+CS fundamentals, puzzlers, brain teasers.
