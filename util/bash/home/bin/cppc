@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+CPP_SRC="$1"
+
+[[ -z "${CPP_SRC}" ]] && { (>&2 echo "ERROR: No program specified"); exit 1 }
+
+CPP_PGM=${CPP_SRC:r}
+
+echo "Compiling ${CPP_PGM}.cpp to ./${CPP_PGM}\t..."
+
+gcc $CPP_SRC -o $CPP_PGM
+
